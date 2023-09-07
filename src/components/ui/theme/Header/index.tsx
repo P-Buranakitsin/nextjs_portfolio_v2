@@ -7,7 +7,7 @@ import Sidebar from './Sidebar';
 
 const Header = () => {
 	const [sidebar, toggle] = useState(false);
-	const [bgColor, setBgColor] = useState(window.pageYOffset > 50 ? 'bg-white/30 backdrop-blur-md' : 'bg-transparent');
+	const [bgColor, setBgColor] = useState('bg-transparent');
 
 	const handleScroll = () => {
 		const position = window.pageYOffset;
