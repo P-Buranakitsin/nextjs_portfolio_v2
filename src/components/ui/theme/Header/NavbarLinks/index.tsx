@@ -19,6 +19,10 @@ const NavbarLinks = ({ sidebar, desktop }: NavbarLinksProps) => {
 		setHasMounted(true);
 	}, []);
 
+	if (pathname !== '/') {
+		return <></>
+	}
+
 	return (
 		<div
 			className={clsx({

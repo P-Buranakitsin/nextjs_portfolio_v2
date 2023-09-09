@@ -20,7 +20,6 @@ const HomePage = () => (
 
 			<Skills />
 			<Contact />
-			<Footer />
 		</AllProviders>
 	</>
 );
