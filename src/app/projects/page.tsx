@@ -14,6 +14,7 @@ const Projects = () => {
 				</div>
 			</div>
 			<div className="flex flex-col flex-grow">
+				{/* @ts-expect-error Server Component */}
 				<AllProjects />
 			</div>
 		</>
