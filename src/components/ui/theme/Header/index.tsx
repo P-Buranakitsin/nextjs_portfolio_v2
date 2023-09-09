@@ -4,10 +4,13 @@ import clsx from 'clsx';
 import Navbar from './Navbar';
 import Hamburger from './Hamburger';
 import Sidebar from './Sidebar';
+import { usePathname } from 'next/navigation';
+
 
 const Header = () => {
 	const [sidebar, toggle] = useState(false);
 	const [bgColor, setBgColor] = useState('bg-transparent');
+	const pathname = usePathname();
 
 	const handleScroll = () => {
 		const position = window.pageYOffset;
@@ -36,8 +39,11 @@ const Header = () => {
 				onClick={() => toggle(!sidebar)}
 			/>
 			<Navbar />
-			<Hamburger sidebar={sidebar} toggle={toggle} />
-			<Sidebar sidebar={sidebar} toggle={() => toggle(!sidebar)} />
+			{pathname === "/" && <>
+				<Hamburger sidebar={sidebar} toggle={toggle} />
+				<Sidebar sidebar={sidebar} toggle={() => toggle(!sidebar)} />
+			</>}
+
 		</div>
 	);
 };
