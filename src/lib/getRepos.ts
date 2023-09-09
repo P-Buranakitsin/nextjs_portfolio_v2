@@ -1,14 +1,14 @@
 import 'server-only';
 import { RepositoryEdge } from 'generated/graphql';
 
-const getRepos = async (): Promise<RepositoryEdge[]> => {
+const getRepos = async (repoShown: number, direction: 'ASC' | 'DESC'): Promise<RepositoryEdge[]> => {
 	const res = await fetch('https://api.github.com/graphql', {
 		method: 'POST',
 		body: JSON.stringify({
 			query: `
 				query viewer {
 					viewer {
-						repositories(first: 8, orderBy: {field: STARGAZERS, direction: DESC}) {
+						repositories(first: ${repoShown}, orderBy: {field: STARGAZERS, direction: ${direction} }) {
 							edges {
 								node {
 									id
