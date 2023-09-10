@@ -20,7 +20,7 @@ const Footer = () => (
 				</span>
 			</div>
 			<div className="flex items-center">
-				{social.map(({ id, name, link, icon }) => (
+				{/* {social.map(({ id, name, link, icon }) => (
 					<a
 						key={id}
 						href={link}
@@ -31,7 +31,7 @@ const Footer = () => (
 					>
 						<Image src={icon} alt={name} width={24} height={24} />
 					</a>
-				))}
+				))} */}
 			</div>
 		</div>
 	</div>

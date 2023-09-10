@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import ToggleTheme from 'components/ui/theme/Header/ToggleTheme';
+import { IHeaderProps } from '..';
 
 type NavbarLinksProps = {
 	desktop?: boolean;
 	sidebar?: boolean;
 };
 
-const NavbarLinks = ({ sidebar, desktop }: NavbarLinksProps) => {
+const NavbarLinks = ({ sidebar, desktop, isHomePage }: NavbarLinksProps & IHeaderProps) => {
 	const [hasMounted, setHasMounted] = useState(false);
 	const pathname = usePathname();
 
@@ -19,7 +20,7 @@ const NavbarLinks = ({ sidebar, desktop }: NavbarLinksProps) => {
 		setHasMounted(true);
 	}, []);
 
-	if (pathname !== '/') {
+	if (!isHomePage) {
 		return <></>
 	}
 
@@ -32,7 +33,7 @@ const NavbarLinks = ({ sidebar, desktop }: NavbarLinksProps) => {
 		>
 
 			<Link
-				href={`${pathname}#about`}
+				href={`/about`}
 				className="text-black lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white h-[48px] flex items-center justify-center"
 				scroll
 			>
@@ -44,13 +45,6 @@ const NavbarLinks = ({ sidebar, desktop }: NavbarLinksProps) => {
 				scroll
 			>
 				Projects
-			</Link>
-			<Link
-				href={`${pathname}#contact`}
-				className="text-black lg:mb-0 mr-0 lg:mr-4 dark:text-white lg:dark:text-black min-[2170px]:dark:text-white h-[48px] flex items-center justify-center"
-				scroll
-			>
-				Contact
 			</Link>
 			{/* {hasMounted && <ToggleTheme />} */}
 		</div>

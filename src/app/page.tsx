@@ -6,11 +6,13 @@ import AllProviders from 'components/AllProviders';
 import Footer from 'components/ui/theme/Footer';
 import Scripts from 'components/Scripts';
 import FeaturedProjects from 'components/modules/FeaturedProjects';
+import Header from 'components/ui/theme/Header';
 
 const HomePage = () => (
 	<>
 		<Scripts />
 		<AllProviders>
+			<Header isHomePage={true} />
 			<Intro />
 
 			{/* @ts-expect-error Server Component */}
@@ -18,8 +20,9 @@ const HomePage = () => (
 			{/* @ts-expect-error Server Component */}
 			<Projects />
 
-			<Skills />
-			<Contact />
+			{/* <Skills />
+			<Contact /> */}
+			<Footer />
 		</AllProviders>
 	</>
 );

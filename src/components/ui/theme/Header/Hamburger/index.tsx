@@ -1,11 +1,12 @@
 import clsx from 'clsx';
+import { IHeaderProps } from '..';
 
 type HamburgerProps = {
 	sidebar?: boolean;
 	toggle: (value: boolean) => void;
 };
 
-const Hamburger = ({ sidebar, toggle }: HamburgerProps) => (
+const Hamburger = ({ sidebar, toggle, isHomePage }: HamburgerProps & IHeaderProps) => (
 	<div
 		className={clsx('z-20 top-[1.6rem] right-[1.8rem] cursor-pointer burger-transition absolute block lg:hidden')}
 		onClick={() => toggle(!sidebar)}

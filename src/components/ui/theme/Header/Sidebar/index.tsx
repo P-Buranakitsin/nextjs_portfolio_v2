@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import NavbarLinks from 'components/ui/theme/Header/NavbarLinks';
+import { IHeaderProps } from '..';
 
 type SideBarProps = {
 	sidebar?: boolean;
 	toggle: () => void;
 };
 
-const Sidebar = ({ sidebar, toggle }: SideBarProps) => (
+const Sidebar = ({ sidebar, toggle, isHomePage }: SideBarProps & IHeaderProps) => (
 	<div
 		className={clsx(
 			'',
@@ -17,7 +18,7 @@ const Sidebar = ({ sidebar, toggle }: SideBarProps) => (
 		)}
 		onClick={toggle}
 	>
-		<NavbarLinks sidebar={sidebar} />
+		<NavbarLinks sidebar={sidebar} isHomePage={isHomePage} />
 	</div>
 );
 

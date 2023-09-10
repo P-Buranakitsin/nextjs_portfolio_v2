@@ -6,8 +6,11 @@ import Hamburger from './Hamburger';
 import Sidebar from './Sidebar';
 import { usePathname } from 'next/navigation';
 
+export interface IHeaderProps {
+	isHomePage: boolean
+}
 
-const Header = () => {
+const Header = ({ isHomePage }: IHeaderProps) => {
 	const [sidebar, toggle] = useState(false);
 	const [bgColor, setBgColor] = useState('bg-transparent');
 	const pathname = usePathname();
@@ -38,12 +41,11 @@ const Header = () => {
 				})}
 				onClick={() => toggle(!sidebar)}
 			/>
-			<Navbar />
-			{pathname === "/" && <>
-				<Hamburger sidebar={sidebar} toggle={toggle} />
-				<Sidebar sidebar={sidebar} toggle={() => toggle(!sidebar)} />
+			<Navbar isHomePage={isHomePage} />
+			{isHomePage && <>
+				<Hamburger sidebar={sidebar} toggle={toggle} isHomePage={isHomePage} />
+				<Sidebar sidebar={sidebar} toggle={() => toggle(!sidebar)} isHomePage={isHomePage} />
 			</>}
-
 		</div>
 	);
 };

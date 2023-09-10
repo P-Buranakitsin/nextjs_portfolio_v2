@@ -3,11 +3,6 @@ import config from 'data/config';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import 'components/ui/globals.css';
-import AllProviders from 'components/AllProviders';
-import Scripts from 'components/Scripts';
-import Intro from 'components/modules/Intro';
-import Footer from 'components/ui/theme/Footer';
-import Header from 'components/ui/theme/Header';
 
 const { url, defaultDescription, defaultTitle, twitter } = config;
 
@@ -59,12 +54,7 @@ type RootLayoutProps = {
 const RootLayout = ({ children }: RootLayoutProps) => (
 	<html lang="en" className={`${roboto.variable} font-sans scroll-smooth min-h-[100vh]`}>
 		<body className='flex flex-col min-h-[100vh]'>
-			<Scripts />
-			<AllProviders>
-				<Header />
-				{children}
-				<Footer />
-			</AllProviders>
+			{children}
 		</body>
 	</html>
 );
