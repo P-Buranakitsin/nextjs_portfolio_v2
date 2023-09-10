@@ -18,13 +18,15 @@ const Intro = () => {
 	}]
 
 	const Contacts = () => {
-		return contactsData.map((contact, index) => {
-			return (
-				<Link href={contact.link} target='_blank' className='opacity-100 hover:opacity-100 flex w-fit ' key={index}>
-					<contact.Icon size={34} color='rgb(129 140 248)' />
-				</Link>
-			)
-		})
+		return <>
+			{contactsData.map((contact, index) => {
+				return (
+					<Link href={contact.link} target='_blank' className='opacity-100 hover:opacity-100 flex w-fit ' key={index}>
+						<contact.Icon size={34} color='rgb(129 140 248)' />
+					</Link>
+				)
+			})}
+		</>
 	}
 
 	return (
