@@ -6,7 +6,7 @@
   "typescript.suggest.autoImports": true,
   "typescript.suggest.paths": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.detectIndentation": false,
   "editor.insertSpaces": false,

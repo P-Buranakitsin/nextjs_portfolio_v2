@@ -15,9 +15,9 @@ const HomePage = () => (
 			<Header isHomePage={true} />
 			<Intro />
 
-			{/* @ts-expect-error Server Component */}
+			{/* @ts-ignore */}
 			<FeaturedProjects />
-			{/* @ts-expect-error Server Component */}
+			{/* @ts-ignore */}
 			<Projects />
 
 			{/* <Skills />
