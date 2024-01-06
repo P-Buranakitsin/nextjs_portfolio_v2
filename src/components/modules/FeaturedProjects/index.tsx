@@ -25,7 +25,7 @@ const FeaturedProjects = async () => {
 		name: 'ChupChup',
 		description: 'Chup Chup is a dynamic voucher selling platform that offers a wide range of vouchers from multiple industries. As a voucher selling platform, Chup Chup focuses on providing customers with discounted deals and savings in various sectors, including restaurants, hotels, and automotive services.',
 		tools: ['TypeScript', 'React.js', 'Bootstrap'],
-		url: 'https://www.chupchup.com/',
+		url: '',
 		image: '/assets/projects/chupchup.png'
 	}]
 
